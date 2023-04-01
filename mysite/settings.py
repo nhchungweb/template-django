@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'myapps.home',
     'myapps.shop',
     'myapps.contact',
-    'myapps.account'
+    'myapps.account',
+    'rest_framework',
+    'myapps.api'
 ]
 
 MIDDLEWARE = [
