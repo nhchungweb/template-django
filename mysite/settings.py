@@ -43,8 +43,16 @@ INSTALLED_APPS = [
     'myapps.contact',
     'myapps.account',
     'rest_framework',
+    'rest_framework.authtoken',
     'myapps.api'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # <-- And here
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

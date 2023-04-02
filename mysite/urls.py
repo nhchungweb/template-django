@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework.documentation import include_docs_urls
+
 # Admin Site Config
 admin.sites.AdminSite.site_header = 'HDCiname Admin'
 admin.sites.AdminSite.site_title = 'HDCiname Admin'
@@ -26,5 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('',include('myapps.home.urls')),
-    path('',include('myapps.api.urls'))
+    
+    
+    path('api/',include('myapps.api.urls')),
+    path('docs/', include_docs_urls(title='Snippet API'))
 ]

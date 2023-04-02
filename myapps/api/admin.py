@@ -1,4 +1,5 @@
 from django.contrib import admin
+from rest_framework.authtoken.admin import TokenAdmin
 
 # Register your models here.
 from django.contrib import admin
@@ -11,3 +12,7 @@ class CarAdmin(admin.ModelAdmin):
     search_fields = ['name', 'color','brand']
 
 admin.site.register(Car, CarAdmin)
+
+
+
+TokenAdmin.raw_id_fields = ['user']

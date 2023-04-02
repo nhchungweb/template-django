@@ -4,11 +4,15 @@ from requests import post
 
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.permissions import IsAuthenticated
 
 from myapps.api.models import Car
 from myapps.api.serializers import CarSerializer
 
 class ListCreateCarView(ListCreateAPIView):
+    
+    permission_classes = (IsAuthenticated,)
+    
     model = Car
     serializer_class = CarSerializer
 
@@ -30,6 +34,9 @@ class ListCreateCarView(ListCreateAPIView):
         }, status=status.HTTP_400_BAD_REQUEST)
 
 class UpdateDeleteCarView(RetrieveUpdateDestroyAPIView):
+    
+    permission_classes = (IsAuthenticated,)
+    
     model = Car
     serializer_class = CarSerializer
 
