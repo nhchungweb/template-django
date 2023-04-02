@@ -29,8 +29,9 @@ urlpatterns = [
     
     path('',include('myapps.home.urls')),
     
-    
     path('',include('myapps.api.urls')),
+    
+    path('',include('myapps.dev.urls')),
     
     path('docs/', include_docs_urls(title='Snippet API'))
 ]
