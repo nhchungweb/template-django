@@ -39,6 +39,11 @@ class UpdateDeleteCarView(RetrieveUpdateDestroyAPIView):
     
     model = Car
     serializer_class = CarSerializer
+    
+    def get(self, *args, **kwargs):
+        car = get_object_or_404(Car, id=kwargs.get('pk'))
+        serializer = CarSerializer(car)
+        return JsonResponse(serializer.data)
 
     def put(self, request, *args, **kwargs):
         car = get_object_or_404(Car, id=kwargs.get('pk'))

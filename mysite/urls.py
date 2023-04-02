@@ -30,6 +30,7 @@ urlpatterns = [
     path('',include('myapps.home.urls')),
     
     
-    path('api/',include('myapps.api.urls')),
+    path('',include('myapps.api.urls')),
+    
     path('docs/', include_docs_urls(title='Snippet API'))
 ]
